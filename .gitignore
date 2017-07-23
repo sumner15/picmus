@@ -1,0 +1,15 @@
+*.asv
+*.fig
+*.avi
+*.pptx
+*.png
+*.obj
+*.h5
+*.hdf5
+*.uff
+*.mat
+*.gif
+*.zip
+*.tar.gz
+*.m~
+development/
