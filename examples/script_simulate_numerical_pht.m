@@ -195,7 +195,8 @@ iq_ds.write_file(path_dataset_iq);
 
 %-- Test of reconstruction using standard das method
 
-%-- download scanning region file$
+%-- download scanning region file
+url = 'https://www.creatis.insa-lyon.fr/EvaluationPlatform/picmus/dataset/';
 local_path = [picmus_path(),'/data/']; % location of example data in this computer
 if (~exist([local_path,'scanning_region_picmus.hdf5'],'file'))
      tools.download('scanning_region_picmus.hdf5', url, local_path);
