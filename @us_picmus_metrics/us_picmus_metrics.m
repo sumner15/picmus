@@ -369,10 +369,10 @@ classdef us_picmus_metrics < handle
                         sample = sample(:);         
 
                         %-- Empirical evaluation of the variance on the selected block
-                        var_block = tools.get_rayleigh_param(sample);
+                        sqrt_var_block = raylfit(sample);
 
                         %-- Application of the KS test against the Rayleigh pdf with 5% confidence interval
-                        score = 1-kstest(sample, 'CDF', [sample, raylcdf(sample, sqrt(var_block))], 'alpha', 0.05);
+                        score = 1-kstest(sample, 'CDF', [sample, raylcdf(sample, sqrt_var_block)], 'alpha', 0.05);
 
                         %-- Ploting Roi contour along with a code color
                         %-- green: test passed || red: test failed                    
