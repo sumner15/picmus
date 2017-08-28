@@ -3,6 +3,9 @@ function download(filename, url, local_path )
 
     % check if the path is there 
     a=dir([local_path]);
+    if ~verLessThan('matlab','9.1') % for 2016b matlab version or latter
+        o = weboptions('CertificateFilename','');
+    end
     if not(numel(a))
         % if not create it
         mkdir(local_path);
